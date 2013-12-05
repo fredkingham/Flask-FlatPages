@@ -29,7 +29,6 @@ except ImportError:
 
 VERSION = '0.5'
 
-
 def pygmented_markdown(text, flatpages=None):
     """Render Markdown text to HTML.
 
@@ -105,6 +104,14 @@ class Page(object):
         ``page['title']`` or, in a template, ``{{ page.title }}`` are
         equivalent to ``page.meta['title']``.
         """
+
+        print "we are here %s" % name
+        if name not in self.meta:
+            if name.endswith("_html"):
+                print "looking up %s" % self.meta[name.replace("_html", "")]
+                print "looking up %s" % self.meta
+                return self.html_renderer(self.meta[name.replace("_html", "")])
+
         return self.meta[name]
 
     def __html__(self):
