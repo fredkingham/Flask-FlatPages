@@ -14,3 +14,12 @@ as opposed to a relationnal database.
 .. _on python.org: http://packages.python.org/Flask-FlatPages/
 .. _on Github: https://github.com/SimonSapin/Flask-FlatPages/
 .. _on PyPI: http://pypi.python.org/pypi/Flask-FlatPages
+
+Fork Differences
+----------------
+
+I've added markdown (or whichever renderer) support to other classes. \
+
+To access a raw field without conversion by the renderer look up in the normal dictionary manner e.g. foo["bar"]
+
+To access an rendered version just suffix _html e.g. foo["bar_html"]
